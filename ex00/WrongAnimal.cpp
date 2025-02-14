@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:16:30 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/13 19:19:26 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 11:11:05 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 WrongAnimal::WrongAnimal()
 	: type("unclassified")
 {
+	std::cout << "Default constructor for Wrong Animal called." << std::endl;
 }
 WrongAnimal::WrongAnimal(const WrongAnimal &other)
+	: type(other.type)
 {
-	*this = other;
+	std::cout << "Copy constructor for Wrong Animal called." << std::endl;
 }
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &other)
 {
+	std::cout << "Copy assignment operator for Wrong Animal called." << std::endl;
 	if(this != &other)
 		this->type = other.type;
 	return(*this);
@@ -29,7 +32,9 @@ WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &other)
 
 WrongAnimal::~WrongAnimal()
 {
+	std::cout << "Destructor for Wrong Animal called." << std::endl;
 }
+
 
 void	WrongAnimal::makeSound() const
 {

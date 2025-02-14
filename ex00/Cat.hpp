@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:10:44 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/13 19:18:19 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 09:27:46 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ class Cat: public Animal{
 
 public:
 	Cat();
+	Cat(const Cat &other);
+	Cat		&operator=(const Cat &other);
+	virtual ~Cat();
 
 	void	makeSound() const;
 

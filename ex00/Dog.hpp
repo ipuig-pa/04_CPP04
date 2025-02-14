@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:09:53 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/13 18:59:42 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 09:30:24 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ class Dog: public Animal{
 
 public:
 	Dog();
+	Dog(const Dog &other);
+	Dog		&operator=(const Dog &other);
+	virtual ~Dog();
 
 	void	makeSound() const;
 
