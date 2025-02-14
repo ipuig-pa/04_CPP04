@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:18:38 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/14 11:05:54 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 11:58:07 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,24 @@ int main()
 	cat.makeSound();
 	copy_cat.makeSound();
 
+	std::cout << "\n==== Copy assignment Tests ====" << std::endl;
+
+	Cat cat1;
+	Cat cat2;
+
+	std::cout << "Before assignment:" << std::endl;
+	std::cout << "cat type: " << cat.getType() << std::endl;
+	std::cout << "cat2 type: " << cat2.getType() << std::endl;
+	cat.makeSound();
+	cat2.makeSound();
+
+	cat2 = cat1;
+
+	std::cout << "After assignment:" << std::endl;
+	std::cout << "cat type: " << cat.getType() << std::endl;
+	std::cout << "cat2 type: " << cat2.getType() << std::endl;
+	cat.makeSound();
+	cat2.makeSound();
+	
 	return 0;
 }

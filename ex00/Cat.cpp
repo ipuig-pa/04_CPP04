@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:27:01 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/14 09:38:53 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 11:54:42 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat		&Cat::operator=(const Cat &other)
 {
 	std::cout << "Copy assignment operator for Cat called." << std::endl;
 	if(this != &other)
-		this->type = other.type;
+		Animal::operator=(other);
 	return(*this);
 }
 
