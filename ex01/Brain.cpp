@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:22:24 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/13 19:32:11 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:47:33 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,37 @@
 
 Brain::Brain()
 {
+	std::cout << "Default constructor for Brain called." << std::endl;
 }
 
-Brain(Brain &other)
+Brain::Brain(Brain &other)
 {
+	std::cout << "Copy constructor for Brain called." << std::endl;
 	*this = other;
 }
 
-Brain	&operator=(Brain &other) const
+Brain	&Brain::operator=(Brain &other)
 {
+	std::cout << "Copy assignment operator for Brain called." << std::endl;
 	if (this != &other)
-		this->ideas = other.ideas;
+	{
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = other.ideas[i];
+	}
 	return (*this);
 }
 
-~Brain()
+Brain::~Brain()
 {
+	std::cout << "Destructor for Brain called." << std::endl;
+}
+
+std::string	Brain::getIdea(int i) const
+{
+	return (this->ideas[i]);
+}
+
+void	Brain::setIdea(int i, std::string idea)
+{
+	this->ideas[i] = idea;
 }

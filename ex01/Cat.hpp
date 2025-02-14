@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:10:44 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/13 19:29:16 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:39:37 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ class Cat: public Animal{
 
 public:
 	Cat();
-	~Cat();
+	Cat(const Cat &other);
+	Cat		&operator=(const Cat &other);
+	virtual ~Cat();
 
 	void	makeSound() const;
+	Brain	*getBrain() const;
 
 private:
-	Brain::Brain *brain;
+	Brain	*brain;
 
 };
 

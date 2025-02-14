@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:22:27 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/13 19:32:26 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:47:37 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ class Brain{
 public:
 	Brain();
 	Brain(Brain &other);
-	Brain	&operator=(Brain &other) const;
+	Brain	&operator=(Brain &other);
 	~Brain();
+
+	std::string	getIdea(int i) const;
+	void		setIdea(int i, std::string idea);
 
 private:
 	std::string	ideas[100];
