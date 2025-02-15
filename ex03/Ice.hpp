@@ -6,7 +6,7 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:50:40 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/14 16:52:55 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:14:44 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 # include "AMateria.hpp"
 # include <iostream>
 
-class Ice{
+class Ice : public AMateria{
 
 public:
 	Ice();
 	Ice(const Ice &other);
-	Ice	*operator=(const Ice &other);
-	~Ice();
+	Ice	&operator=(const Ice &other);
+	virtual~Ice();
 
-	AMateria* clone() const;
-	void use(ICharacter& target);
+	virtual AMateria* clone() const;
+	virtual void use(ICharacter& target);
 
 };
 

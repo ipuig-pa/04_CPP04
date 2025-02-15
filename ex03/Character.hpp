@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Character.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:54:56 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/15 10:53:30 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:25:32 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 # include <iostream>
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class AMateria; //forward declaration
+class Character : public ICharacter{
 
-class ICharacter{
+private:
+	std::string		name;
+	AMateria		*inventory[4];
+	static AMateria	*floor[100];
+	static int		floor_count;
 
 public:
 
-	virtual ~ICharacter() {}
-	virtual std::string const &getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+	Character();
+	Character(const std::string &name);
+	Character( const Character &other);
+	Character					&operator=( const Character &other);
+	virtual ~Character();
+
+	virtual std::string const	&getName() const;
+	virtual void				equip(AMateria* m);
+	virtual void				unequip(int idx);
+	virtual void				use(int idx, ICharacter& target);
+	static void					cleanFloor(void);
 
 };
 

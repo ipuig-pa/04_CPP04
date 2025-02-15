@@ -6,28 +6,26 @@
 /*   By: ipuig-pa <ipuig-pa@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:50:32 by ipuig-pa          #+#    #+#             */
-/*   Updated: 2025/02/14 17:12:12 by ipuig-pa         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:16:33 by ipuig-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
-#include "Character.hpp"
 
 Ice::Ice()
-	: AMateria()
+	: AMateria("ice")
 {
-	type = "ice";
 }
 
 Ice::Ice(const Ice &other)
-	AMateria(other), type(other.type)
+	: AMateria(other)
 {
 }
 
-Ice *Ice::operator=(const Ice &other)
+Ice &Ice::operator=(const Ice &other)
 {
 	if (this != &other)
-		this->type = other.type;
+		AMateria::operator=(other);
 	return (*this);
 }
 
@@ -37,8 +35,7 @@ Ice::~Ice()
 
 AMateria*	Ice::clone() const
 {
-	AMateria *new = new Ice();
-	reutrn(new);
+	return(new Ice(*this));
 }
 
 void	Ice::use(ICharacter& target)
